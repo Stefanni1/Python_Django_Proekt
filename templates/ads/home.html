@@ -1,0 +1,80 @@
+{% extends 'ads/base.html' %}
+
+{% block title %}Дома{% endblock %}
+
+{% block content %}
+    <!-- Хедер со помала висина -->
+    <div class="hero-header">
+        <div class="welcome">
+            <h1>Добредојде на ОгласиМК!</h1>
+            <p>Најди ги најдобрите огласи за автомобили, мобилни телефони, електроника и многу повеќе.</p>
+            <a href="{% url 'ad_create' %}" class="welcome-button">Додај оглас сега</a>
+        </div>
+    </div>
+
+    <!-- Истакнат дел за категории -->
+    <div class="featured-categories">
+        <h2>Истражи ги нашите категории</h2>
+        <div class="category-grid">
+            <a href="{% url 'ad_list' %}?category=AVTOMOBILI" class="category-item">
+                <span class="category-icon">🚗</span>
+                Автомобили
+            </a>
+            <a href="{% url 'ad_list' %}?category=MOBILNI" class="category-item">
+                <span class="category-icon">📱</span>
+                Мобилни телефони
+            </a>
+            <a href="{% url 'ad_list' %}?category=ELEKTRONIKA" class="category-item">
+                <span class="category-icon">💻</span>
+                Електроника
+            </a>
+            <a href="{% url 'ad_list' %}?category=DOM" class="category-item">
+                <span class="category-icon">🏡</span>
+                Дом и градина
+            </a>
+            <a href="{% url 'ad_list' %}?category=MODA" class="category-item">
+                <span class="category-icon">👗</span>
+                Мода
+            </a>
+            <a href="{% url 'ad_list' %}?category=USLUGI" class="category-item">
+                <span class="category-icon">🔧</span>
+                Услуги
+            </a>
+            <a href="{% url 'ad_list' %}?category=DRUGO" class="category-item">
+                <span class="category-icon">📦</span>
+                Друго
+            </a>
+        </div>
+    </div>
+
+    <!-- Најнови огласи -->
+    <div class="content">
+        <h2>Најнови огласи</h2>
+        <div class="ad-grid">
+            {% for ad in recent_ads %}
+                <div class="ad-item">
+                    <a href="{% url 'ad_detail' ad.id %}">{{ ad.title }}</a>
+                    <p class="ad-price">{{ ad.price }} {{ ad.get_currency_display }}</p>
+                    <p class="ad-category">
+                        {% if ad.category == 'AVTOMOBILI' %}Автомобили
+                        {% elif ad.category == 'MOBILNI' %}Мобилни телефони
+                        {% elif ad.category == 'ELEKTRONIKA' %}Електроника
+                        {% elif ad.category == 'DOM' %}Дом и градина
+                        {% elif ad.category == 'MODA' %}Мода
+                        {% elif ad.category == 'USLUGI' %}Услуги
+                        {% elif ad.category == 'DRUGO' %}Друго
+                        {% else %}{{ ad.category }}
+                        {% endif %}
+                    </p>
+                    {% if ad.image %}
+                        <img src="{{ ad.image.url }}" alt="{{ ad.title }}">
+                    {% else %}
+                        <p>Нема слика</p>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p>Нема огласи моментално.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

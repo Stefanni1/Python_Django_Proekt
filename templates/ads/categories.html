@@ -1,0 +1,16 @@
+{% extends 'ads/base.html' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h1>Категории</h1>
+        <ul>
+            {% for category in categories %}
+                <li><a href="{% url 'ad_list' %}?category={{ category }}">{{ category }}</a></li>
+            {% empty %}
+                <p>Нема категории моментално.</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

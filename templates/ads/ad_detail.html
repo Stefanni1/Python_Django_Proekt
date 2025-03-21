@@ -1,0 +1,28 @@
+{% extends 'ads/base.html' %}
+
+{% block title %}{{ ad.title }}{% endblock %}
+
+{% block content %}
+    <div class="ad-detail">
+        <h1>{{ ad.title }}</h1>
+        <p><strong>Опис:</strong> {{ ad.description }}</p>
+        <p><strong>Цена:</strong> {{ ad.price }} {{ ad.get_currency_display }}</p>
+        <p><strong>Категорија:</strong>
+            {% if ad.category == 'AVTOMOBILI' %}Автомобили
+            {% elif ad.category == 'MOBILNI' %}Мобилни телефони
+            {% elif ad.category == 'ELEKTRONIKA' %}Електроника
+            {% elif ad.category == 'DOM' %}Дом и градина
+            {% elif ad.category == 'MODA' %}Мода
+            {% elif ad.category == 'USLUGI' %}Услуги
+            {% elif ad.category == 'DRUGO' %}Друго
+            {% else %}{{ ad.category }}
+            {% endif %}
+        </p>
+        <p><strong>Датум:</strong> {{ ad.created_at }}</p>
+        {% if ad.image %}
+            <img src="{{ ad.image.url }}" alt="{{ ad.title }}">
+        {% else %}
+            <p>Нема слика</p>
+        {% endif %}
+    </div>
+{% endblock %}

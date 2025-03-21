@@ -1,0 +1,25 @@
+{% extends 'ads/base.html' %}
+
+{% block title %}Огласи{% if category %} - {{ category }}{% endif %}{% endblock %}
+
+{% block content %}
+    <div class="ad-list">
+        <h1>Огласи{% if category %} - {{ category }}{% endif %}</h1>
+        <div class="ad-grid">
+            {% for ad in ads %}
+                <div class="ad-item">
+                    <a href="{% url 'ad_detail' ad.id %}">{{ ad.title }}</a>
+                    <p>{{ ad.price }} {{ ad.get_currency_display }}</p>
+                    <p>{{ ad.get_category_display }}</p>
+                    {% if ad.image %}
+                        <img src="{{ ad.image.url }}" alt="{{ ad.title }}">
+                    {% else %}
+                        <p>Нема слика</p>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p>Нема огласи во оваа категорија.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
