@@ -11,7 +11,7 @@ body {
 /* Навигациски бар */
 .navbar {
     background-color: #1A3C34;
-    padding: 15px 30px;
+    padding: 10px 20px; /* Намален padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,14 +24,9 @@ body {
 
 .navbar-logo .logo-text {
     color: #FFFFFF;
-    font-size: 24px;
+    font-size: 20px; /* Намален од 24px на 20px */
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-}
-
-.navbar-logo img {
-    height: 80px;
-    width: auto;
 }
 
 .navbar-links {
@@ -43,7 +38,7 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px; /* Намален од 18px на 16px */
     transition: color 0.3s ease;
 }
 
@@ -54,12 +49,7 @@ body {
 /* Главна содржина */
 .main-content {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 120px);
     padding: 20px;
-    box-sizing: border-box;
 }
 
 /* Хедер со позадина */
@@ -67,52 +57,21 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
-    padding: 80px 20px;
+    padding: 120px 20px;
     text-align: center;
     color: white;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Анимација за хедерот */
-.hero-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
 }
 
 /* Добредојде дел */
 .welcome {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    animation: fadeIn 1s ease-in-out;
-    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .welcome h1 {
     font-size: 36px;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: slideIn 1s ease-in-out;
 }
 
 .welcome p {
@@ -124,77 +83,25 @@ body {
 .welcome-button {
     display: inline-block;
     background-color: #E07A5F;
-    color: #FFFFFF;
+    color: white;
     padding: 12px 30px;
-    border-radius: 25px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 .welcome-button:hover {
     background-color: #F4A261;
-    transform: scale(1.05);
-}
-
-/* Анимации */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Истакнат дел за категории */
-.featured-categories {
-    background-color: #FFFFFF;
-    padding: 40px 20px;
-    margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.featured-categories h2 {
-    color: #1A3C34;
-    font-size: 28px;
-    margin-bottom: 30px;
-    text-align: center;
-    position: relative;
-}
-
-.featured-categories h2::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background-color: #E07A5F;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 /* Категории */
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
+    padding: 20px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -202,7 +109,7 @@ body {
 
 .category-item {
     background: linear-gradient(135deg, #81B29A, #3D405B);
-    color: #FFFFFF;
+    color: white;
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -213,44 +120,15 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .category-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.category-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.category-item:hover::before {
-    transform: translateX(100%);
 }
 
 .category-icon {
     font-size: 24px;
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
 }
 
 /* Огласи дел */
@@ -265,59 +143,26 @@ body {
     font-size: 28px;
     margin-bottom: 30px;
     text-align: center;
-    position: relative;
 }
 
-.content h2::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background-color: #E07A5F;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Осигуруваме дека .ad-grid функционира */
 .content .ad-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 30px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .ad-item {
-    background-color: #FFFFFF;
+    background-color: white;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     text-align: center;
     border: 1px solid #D1D5DB;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .ad-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-color: #E07A5F;
-}
-
-.ad-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(224, 122, 95, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.ad-item:hover::before {
-    transform: translateX(100%);
 }
 
 .ad-item a {
@@ -343,12 +188,7 @@ body {
 .ad-item .ad-category {
     margin: 5px 0;
     color: #1A3C34;
-    font-size: 16px;
-    background-color: #F4A261;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
+    font-size: 14px;
 }
 
 .ad-item img {
@@ -374,21 +214,20 @@ body {
 }
 
 .ad-list .ad-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 30px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 /* Форма за додавање оглас */
 .ad-form {
     max-width: 500px;
-    width: 100%;
-    background-color: #FFFFFF;
+    margin: 0 auto;
+    background-color: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 0 auto;
 }
 
 .ad-form h1 {
@@ -449,9 +288,9 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 30px;
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ad-detail h1 {
@@ -482,7 +321,7 @@ body {
 .footer {
     background-color: #1A3C34;
     color: #FFFFFF;
-    padding: 20px;
+    padding: 10px 20px;
     text-align: center;
     border-top: 3px solid #E07A5F;
 }
@@ -494,7 +333,7 @@ body {
 
 .footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .footer-links {
@@ -505,7 +344,7 @@ body {
     color: #E07A5F;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .footer-links a:hover {

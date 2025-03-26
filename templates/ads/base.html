@@ -1,20 +1,17 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ОгласиМК{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-logo">
-            <a href="{% url 'home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="ОгласиМК Logo">
-            </a>
+            <a href="{% url 'home' %}" class="logo-text">ОгласиМК</a>
         </div>
         <div class="navbar-links">
             <a href="{% url 'home' %}">Дома</a>
@@ -22,19 +19,21 @@
             <a href="{% url 'ad_create' %}">Додај оглас</a>
         </div>
     </div>
+
     <div class="main-content">
         {% block content %}
         {% endblock %}
     </div>
-    <footer class="footer">
+
+    <div class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 ОгласиМК. Сите права се задржани.</p>
+            <p>© 2025 ОгласиМК. Сите права се задржани.</p>
             <div class="footer-links">
                 <a href="#">За нас</a>
                 <a href="#">Контакт</a>
-                <a href="#">Политика за приватност</a>
+                <a href="#">Услови за користење</a>
             </div>
         </div>
-    </footer>
+    </div>
 </body>
 </html>

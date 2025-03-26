@@ -3,7 +3,7 @@
 {% block title %}Дома{% endblock %}
 
 {% block content %}
-    <!-- Хедер со помала висина -->
+    <!-- Хедер со позадинска слика -->
     <div class="hero-header">
         <div class="welcome">
             <h1>Добредојде на ОгласиМК!</h1>
@@ -12,42 +12,39 @@
         </div>
     </div>
 
-    <!-- Истакнат дел за категории -->
-    <div class="featured-categories">
-        <h2>Истражи ги нашите категории</h2>
-        <div class="category-grid">
-            <a href="{% url 'ad_list' %}?category=AVTOMOBILI" class="category-item">
-                <span class="category-icon">🚗</span>
-                Автомобили
-            </a>
-            <a href="{% url 'ad_list' %}?category=MOBILNI" class="category-item">
-                <span class="category-icon">📱</span>
-                Мобилни телефони
-            </a>
-            <a href="{% url 'ad_list' %}?category=ELEKTRONIKA" class="category-item">
-                <span class="category-icon">💻</span>
-                Електроника
-            </a>
-            <a href="{% url 'ad_list' %}?category=DOM" class="category-item">
-                <span class="category-icon">🏡</span>
-                Дом и градина
-            </a>
-            <a href="{% url 'ad_list' %}?category=MODA" class="category-item">
-                <span class="category-icon">👗</span>
-                Мода
-            </a>
-            <a href="{% url 'ad_list' %}?category=USLUGI" class="category-item">
-                <span class="category-icon">🔧</span>
-                Услуги
-            </a>
-            <a href="{% url 'ad_list' %}?category=DRUGO" class="category-item">
-                <span class="category-icon">📦</span>
-                Друго
-            </a>
-        </div>
+    <!-- Дел за категории -->
+    <div class="category-grid">
+        <a href="{% url 'ad_list' %}?category=AVTOMOBILI" class="category-item">
+            <span class="category-icon">🚗</span>
+            Автомобили
+        </a>
+        <a href="{% url 'ad_list' %}?category=MOBILNI" class="category-item">
+            <span class="category-icon">📱</span>
+            Мобилни телефони
+        </a>
+        <a href="{% url 'ad_list' %}?category=ELEKTRONIKA" class="category-item">
+            <span class="category-icon">💻</span>
+            Електроника
+        </a>
+        <a href="{% url 'ad_list' %}?category=DOM" class="category-item">
+            <span class="category-icon">🏡</span>
+            Дом и градина
+        </a>
+        <a href="{% url 'ad_list' %}?category=MODA" class="category-item">
+            <span class="category-icon">👗</span>
+            Мода
+        </a>
+        <a href="{% url 'ad_list' %}?category=USLUGI" class="category-item">
+            <span class="category-icon">🔧</span>
+            Услуги
+        </a>
+        <a href="{% url 'ad_list' %}?category=DRUGO" class="category-item">
+            <span class="category-icon">📦</span>
+            Друго
+        </a>
     </div>
 
-    <!-- Најнови огласи -->
+    <!-- Дел за најнови огласи -->
     <div class="content">
         <h2>Најнови огласи</h2>
         <div class="ad-grid">
